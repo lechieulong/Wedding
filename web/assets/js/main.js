@@ -1,95 +1,111 @@
 /*
-	Future Imperfect by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+ Future Imperfect by HTML5 UP
+ html5up.net | @ajlkn
+ Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+ */
 
-(function($) {
 
-	var	$window = $(window),
-		$body = $('body'),
-		$menu = $('#menu'),
-		$sidebar = $('#sidebar'),
-		$main = $('#main');
 
-	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ null,      '480px'  ]
-		});
+(function ($) {
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+    var $window = $(window),
+            $body = $('body'),
+            $menu = $('#menu'),
+            $comment = $('#comment'),
+            $sidebar = $('#sidebar'),
+            $main = $('#main');
 
-	// Menu.
-		$menu
-			.appendTo($body)
-			.panel({
-				delay: 500,
-				hideOnClick: true,
-				hideOnSwipe: true,
-				resetScroll: true,
-				resetForms: true,
-				side: 'right',
-				target: $body,
-				visibleClass: 'is-menu-visible'
-			});
+    // Breakpoints.
+    breakpoints({
+        xlarge: ['1281px', '1680px'],
+        large: ['981px', '1280px'],
+        medium: ['737px', '980px'],
+        small: ['481px', '736px'],
+        xsmall: [null, '480px']
+    });
 
-	// Search (header).
-		var $search = $('#search'),
-			$search_input = $search.find('input');
+    // Play initial animations on page load.
+    $window.on('load', function () {
+        window.setTimeout(function () {
+            $body.removeClass('is-preload');
+        }, 100);
+    });
 
-		$body
-			.on('click', '[href="#search"]', function(event) {
+    // Menu.
+    $menu
+            .appendTo($body)
+            .panel({
+                delay: 500,
+                hideOnClick: true,
+                hideOnSwipe: true,
+                resetScroll: true,
+                resetForms: true,
+                side: 'right',
+                target: $body,
+                visibleClass: 'is-menu-visible'
+            });
+    // Menu.
+    $comment
+            .appendTo($body)
+            .panel({
+                delay: 500,
+                hideOnClick: true,
+                hideOnSwipe: true,
+                resetScroll: true,
+                resetForms: true,
+                side: 'left',
+                target: $body,
+                visibleClass: 'is-comment-visible'
+            });
 
-				event.preventDefault();
+    // Search (header).
+    var $search = $('#search'),
+            $search_input = $search.find('input');
 
-				// Not visible?
-					if (!$search.hasClass('visible')) {
+    $body
+            .on('click', '[href="#search"]', function (event) {
 
-						// Reset form.
-							$search[0].reset();
+                event.preventDefault();
 
-						// Show.
-							$search.addClass('visible');
+                // Not visible?
+                if (!$search.hasClass('visible')) {
 
-						// Focus input.
-							$search_input.focus();
+                    // Reset form.
+                    $search[0].reset();
 
-					}
+                    // Show.
+                    $search.addClass('visible');
 
-			});
+                    // Focus input.
+                    $search_input.focus();
 
-		$search_input
-			.on('keydown', function(event) {
+                }
 
-				if (event.keyCode == 27)
-					$search_input.blur();
+            });
 
-			})
-			.on('blur', function() {
-				window.setTimeout(function() {
-					$search.removeClass('visible');
-				}, 100);
-			});
+    $search_input
+            .on('keydown', function (event) {
 
-	// Intro.
-		var $intro = $('#intro');
+                if (event.keyCode == 27)
+                    $search_input.blur();
 
-		// Move to main on <=large, back to sidebar on >large.
-			breakpoints.on('<=large', function() {
-				$intro.prependTo($main);
-			});
+            })
+            .on('blur', function () {
+                window.setTimeout(function () {
+                    $search.removeClass('visible');
+                }, 100);
+            });
 
-			breakpoints.on('>large', function() {
-				$intro.prependTo($sidebar);
-			});
+    // Intro.
+    var $intro = $('#intro');
+
+    // Move to main on <=large, back to sidebar on >large.
+    breakpoints.on('<=large', function () {
+        $intro.prependTo($main);
+    });
+
+    breakpoints.on('>large', function () {
+        $intro.prependTo($sidebar);
+    });
 
 })(jQuery);

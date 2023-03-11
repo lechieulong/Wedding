@@ -63,15 +63,16 @@
 
             </div>
         </div>
-
+                 <jsp:include page="includeFile/footer.jsp"></jsp:include>
     <!--Scripts--> 
         <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/detail.js"></script>
         <script src="assets/js/browser.min.js"></script>
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/comment.js"></script>
         <script src="assets/js/main.js"></script>
-                <script src="js/demo/datatables-demo.js"></script>
+        <script src="js/demo/datatables-demo.js"></script>
 
 
     </body>

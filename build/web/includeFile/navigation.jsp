@@ -41,9 +41,9 @@
         <nav class="links">
             <ul>
                 <li><a href="#">Live</a></li>
-                <li><a href="#">Register service</a></li> 
+                <li><a href="register.jsp">REGISTER SERVICE</a></li>
                 <li><a href="log.jsp">Manage transaction</a></li>
-                <li><a href="#" id="add-money-btn">Account Top-up</a></li>
+                <li><a href="#" class="js-account-topup" onclick="display5()">ACCOUNT TOP-UP</a></li>
                 <li><a href="login.jsp">Login</a></li>
                 <li><a href="#">Logout</a></li>
             </ul>
@@ -107,6 +107,7 @@
         <script src="assets/js/util.js"></script>
         <script src="assets/js/comment.js"></script>
         <script src="assets/js/main.js"></script>
+        <script src="assets/js/detail.js"></script>
     <!-- Menu -->
 
 
